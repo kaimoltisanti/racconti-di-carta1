@@ -57,7 +57,7 @@ a {
 header {
     text-transform: uppercase;
     max-width: 1100px;
-    padding: 1em 4em;
+    padding: 1rem 4vw;
     margin: auto;
     align-items: center;
     align-content: center;
@@ -65,7 +65,9 @@ header {
 
 header nav {
     display: flex;
+    gap: 4vw;
     justify-content: space-between;
+    align-items: center;
 }
 
 header nav ul {
@@ -136,4 +138,9 @@ text-transform: uppercase;
     padding: 4rem 4rem;
 } */
 
-
+@media (max-width:400px){
+    header nav ul{
+        display: inline;
+        text-align: center;
+    }
+}
