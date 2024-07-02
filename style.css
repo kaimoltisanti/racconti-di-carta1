@@ -37,7 +37,7 @@ a {
 /* {{ Font Start }} */
 
 :root {
-    --fs-xl: clamp(2rem, 1rem + 2vw, 4rem);
+    --fs-xl: clamp(3rem, 1rem + 2vw, 4rem);
     --fs-600: 2rem;
     --fs-400: 1.6rem;
 }
