@@ -5,6 +5,10 @@ html {
     font-family: Inter;
 }
 
+img {
+    width: 100%;
+}
+
 body {
     margin: 0;
     color: #2E4559;
@@ -37,9 +41,13 @@ a {
 /* {{ Font Start }} */
 
 :root {
-    --fs-xl: clamp(3rem, 1rem + 2vw, 4rem);
-    --fs-600: 2rem;
-    --fs-400: 1.6rem;
+    --fs-sm: clamp(1.3rem, 0.2vi + 1.2rem, 1.4rem);
+    --fs-base: clamp(1.6rem, 0.3vi + 1.5rem, 1.9rem);
+    --fs-md: clamp(2rem, 0.6vi + 1.8rem, 2.5rem);
+    --fs-lg: clamp(2.5rem, 1vi + 2.1rem, 3.4rem);
+    --fs-xl: clamp(3.1rem, 1.6vi + 2.5rem, 4.5rem);
+    --fs-xxl: clamp(3.9rem, 2.4vi + 3rem, 6rem);
+    --fs-xxxl: clamp(4.9rem, 3.5vi + 3.5rem, 8rem);
 }
 
 /* {{ Font End }} */
@@ -49,7 +57,7 @@ a {
 header {
     text-transform: uppercase;
     max-width: 1100px;
-    padding: 1rem 4rem;
+    padding: 1em 4em;
     margin: auto;
     align-items: center;
     align-content: center;
@@ -62,13 +70,13 @@ header nav {
 
 header nav ul {
     display: flex;
-    gap: 4rem;
-    font-size: var(--fs-400);
+    gap: 4vw;
+    font-size: var(--fs-sm);
     font-weight: 500;
 }
 
 header nav a {
-    font-size: var(--fs-600);
+    font-size: var(--fs-base);
     font-family: Kufam;
     font-weight: 600;
 }
@@ -83,25 +91,14 @@ header nav ul :hover {
 header nav :hover{
     color: #4F6F8C;
 }
-@media (max-width: 600px) {
-    header nav ul {
-        display: block;
-    }
 
-    .top{
-        
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-}
 
 /* {{ End Header }} */
 
-.top {
+/* .top {
     position: relative;
     max-width: 1100px;
-    padding: 4rem 4rem;
+    padding: 4em 4em;
     display: flex;
     margin: auto;
 }
@@ -137,5 +134,6 @@ text-transform: uppercase;
     max-width: 1110px;
     margin:auto;
     padding: 4rem 4rem;
-}
-    
+} */
+
+
