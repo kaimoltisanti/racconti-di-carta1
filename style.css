@@ -127,11 +127,11 @@ header nav :hover{
     text-transform: uppercase;
     }
 
-.top img {
+/* .top img {
     max-width: 70%;
     object-fit: contain;
     display: none;
-}
+} */
 
 
 .storia_bg {
@@ -162,7 +162,7 @@ header nav :hover{
     text-align: start;
     justify-content: space-between;
     }
-    .top_bg {
+    /* .top_bg {
         background-image:none;
     }
     .top img {
@@ -172,7 +172,7 @@ header nav :hover{
     .top {
         display: block;
         margin: auto;
-    }
+    } */
 
     
 }
