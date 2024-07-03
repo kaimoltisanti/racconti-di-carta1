@@ -97,10 +97,10 @@ header nav :hover{
 
 /* {{ End Header }} */
 
-/* .top {
+.top {
     position: relative;
     max-width: 1100px;
-    padding: 4em 4em;
+    padding: 4vw 4vw;
     display: flex;
     margin: auto;
 }
@@ -114,13 +114,14 @@ font-style: normal;
 font-weight: 700;
 line-height: 150%;
 margin-bottom: 20%;
-letter-spacing: -0.44px;
+letter-spacing: 90%;
 text-transform: uppercase;
 }
 
 .top img {
-    max-height: 100%;
-    right: 0;
+    object-fit: contain;
+    max-height: 80%;
+    right: -40%;
     top: 0;
     position: absolute;
     z-index: -1;
@@ -138,9 +139,29 @@ text-transform: uppercase;
     padding: 4rem 4rem;
 } */
 
-@media (max-width:400px){
-    header nav ul{
+@media (max-width:400px) {
+    
+    header nav {
         display: inline;
-        text-align: center;
+    }
+
+    header nav ul {
+    text-align: start;
+    justify-content: space-between;
+    }
+}
+
+@media (max-width:400px) {
+    .top {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .top p {
+        width: 100%;
+    }
+
+    .top img {
+        position: static;
     }
 }
