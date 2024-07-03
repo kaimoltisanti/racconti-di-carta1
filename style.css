@@ -127,12 +127,6 @@ header nav :hover{
     text-transform: uppercase;
     }
 
-/* .top img {
-    max-width: 70%;
-    object-fit: contain;
-    display: none;
-} */
-
 
 .storia_bg {
     background-image: url(img/japanese_wave_pattern.png);
@@ -147,9 +141,10 @@ header nav :hover{
 } 
 
 @media (max-width: 556px){
-
+    
     .top_bg {
         background-position: 140% top, 140% 100%;
+        background-size: 58%;
     }
 }
 
@@ -161,18 +156,5 @@ header nav :hover{
     header nav ul {
     text-align: start;
     justify-content: space-between;
-    }
-    /* .top_bg {
-        background-image:none;
-    }
-    .top img {
-        display: flex;
-    }
-
-    .top {
-        display: block;
-        margin: auto;
-    } */
-
-    
+    }    
 }
