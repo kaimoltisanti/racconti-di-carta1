@@ -191,6 +191,21 @@ footer {
     
 }
 
+.card-expandend {
+    background-color: #D9D9D9;
+    margin-bottom: 2vw;
+    padding: 2vw;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1vw;
+}
+
+.card-expandend img {
+    mix-blend-mode: multiply;
+    
+}
+
 .card-storia p {
     color: #2E4559;
     font-family: Kufam;
@@ -204,7 +219,18 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 1vw 6vw;
+    padding: 1vw 4vw;
+    min-height: 8vw;
+}
+
+.info-storia a :hover, .card-storia a :hover, .modelli a :hover{
+    color: #4F6F8C;
+    text-decoration: underline #2E4559;
+}
+
+.card-modelli :hover, .card-storia a :hover {
+    border-radius: 10px;
+    box-shadow: 0px 0px 8.2px 1px rgba(79, 111, 140, 0.50);
 }
 
 .dot0 {
@@ -242,11 +268,6 @@ footer {
     position: relative;
 }
 
-.card-modelli :hover {
-    border-radius: 10px;
-    box-shadow: 0px 0px 8.2px 1px rgba(79, 111, 140, 0.50);
-}
-
 .card-link {
     position: absolute;
     top: 0;
@@ -264,9 +285,7 @@ footer {
     aspect-ratio: 1/1;
 }
 
-
-
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     header nav {
         display: inline;
     }
@@ -274,13 +293,17 @@ footer {
     header nav ul {
     text-align: start;
     justify-content: space-between;
-    } .card-storia {
-        grid-template-columns: 1fr 1fr;
-    }   
-
+    } 
+    
     .grid {
         grid-template-columns: 1fr 1fr;
     }
 
-    
+    .card-storia {
+        grid-template-columns: 1fr 1fr;
+    } 
+
+    .info-storia {
+        grid-template-columns: 1fr;
+    }
 }
