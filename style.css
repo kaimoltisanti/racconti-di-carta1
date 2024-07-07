@@ -3,6 +3,7 @@
 html {
     font-size: 10px;
     font-family: Inter;
+    margin: auto;
 }
 
 img {
@@ -10,20 +11,19 @@ img {
 }
 
 body {
-    margin: 0;
+    margin: auto;
     color: #2E4559;
     background-color: #f1f1f1;
+
 }
 
 h1, h2, h3, h4, h5, h6, ul, li, p, a {
     margin: 0;
     padding: 0;
     color: #2E4559;
-    
-}
-
-li {
+    text-decoration: none;
     list-style: none;
+    
 }
 
 hr {
@@ -31,10 +31,35 @@ hr {
     border: 1px solid #2E4559;
 }
 
-a {
-    font-size: 1.2em;
-    text-decoration: none;
+h1 {
+    font-size: var(--fs-md);
+    font-family: Kufam;
+    text-transform: uppercase;
+    padding-bottom: 2vw;
 }
+
+h2 {
+    text-transform: uppercase;
+    font-family: Kufam;
+    font-size: var(--fs-base);
+    font-weight: 600;
+    margin: 8px 0px 0px 0px;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-family: Kufam;
+    font-size: var(--fs-base);
+    font-weight: 400;
+    color: #4F6F8C;
+}
+
+p {
+    font-size: var(--fs-base);
+    font-family: Kufam;
+}
+
+
 
 /* {{ End General }} */
 
@@ -51,11 +76,9 @@ a {
           --fs-xxxl: clamp(3.7rem, 12.8vi + -1.5rem, 15.2rem);
 }
 
-
-
 /* {{ Font End }} */
 
-/* {{ Start Header }} */
+/* {{ Header and Footer }} */
 
 header, footer {
     text-transform: uppercase;
@@ -70,47 +93,42 @@ header nav {
     display: flex;
     gap: 4vw;
     justify-content: space-between;
-    align-items: center;
 }
 
 header nav ul {
     display: flex;
     gap: 4vw;
-    font-size: var(--fs-sm);
-    font-weight: 500;
 }
 
-header nav a, footer nav a {
+.home-link {
     font-size: var(--fs-base);
     font-family: Kufam;
     font-weight: 600;
 }
 
-header nav ul :hover {
+.h-f-link {
+    font-weight: 500;
+    font-size: var(--fs-sm);
+}
+
+header nav ul li:hover, footer nav ul li :hover{
     font-weight: 600;
     text-decoration: underline;
-    text-decoration-color: 2E4559;
+    text-decoration-color: #2E4559;
     text-decoration-thickness: 2px;
 }
 
-header nav :hover{
+header nav :hover, footer nav :hover {
     color: #4F6F8C;
 }
 
 footer {
     justify-content: center;
-}
-
-footer nav {
     text-align: center;
 }
 
-footer nav ul {
-    font-size: var(--fs-sm);
-    font-weight: 500;
-}
 
-/* {{ End Header }} */
+/* {{ End Header and Footer}} */
 
 .top_bg {
     display: grid;
@@ -145,35 +163,26 @@ footer nav ul {
 }
 
 
-.storia_bg {
+.storia {
     background: url(img/japanese_wave_pattern.png);
     background-size: 80%;
     background-repeat: repeat;
 }
 
-.storia {
+.container-storia {
     padding: 8vw 4vw;
 }
 
-.storia_general {
+.info-storia {
     max-width: 1110px;
     margin:auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 1vw;
     padding-bottom: 4vw;
-    font-size: var(--fs-base);
-    font-family: Kufam;
 } 
 
-h1 {
-    font-size: var(--fs-md);
-    font-family: Kufam;
-    text-transform: uppercase;
-    padding-bottom: 2vw;
-}
-
-.storia_card {
+.card-storia {
     max-width: 1110px;
     margin:auto;
     display: grid;
@@ -182,7 +191,7 @@ h1 {
     
 }
 
-.storia_card p {
+.card-storia p {
     color: #2E4559;
     font-family: Kufam;
     font-size: var(--fs-sm);
@@ -218,43 +227,42 @@ h1 {
 .modelli {
     max-width: 1100px;
     margin: auto;
-    padding: 8vw 4vw;
+    padding: 8vw 4vw 28vw 4vw;
     
 }
 
-.card {
+.grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2vw;
 }
 
-.card div{
+.card-modelli {
     background-color: #D9D9D9;
     border-radius: 10px;
+    position: relative;
 }
 
-.card div div{
+.card-modelli :hover {
+    border-radius: 10px;
+    box-shadow: 0px 0px 8.2px 1px rgba(79, 111, 140, 0.50);
+}
+
+.card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.grid div div{
     padding: 1vw;
 }
-.card img {
+.grid img {
     border-radius: 10px 10px 0 0;
     object-fit: cover;
     aspect-ratio: 1/1;
-}
-h2 {
-    text-transform: uppercase;
-    font-family: Kufam;
-    font-size: var(--fs-base);
-    font-weight: 600;
-    margin: 8px 0px 0px 0px;
-}
-
-h3 {
-    text-transform: uppercase;
-    font-family: Kufam;
-    font-size: var(--fs-base);
-    font-weight: 400;
-    color: #4F6F8C;
 }
 
 
@@ -267,6 +275,13 @@ h3 {
     header nav ul {
     text-align: start;
     justify-content: space-between;
-    }    
+    } .card-storia {
+        grid-template-columns: 1fr 1fr;
+    }   
 
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    
 }
