@@ -209,16 +209,16 @@ footer {
 }
 
 .dot0 {
-    height: 1.2vw;
-    width: 1.2vw;
+    height: var(--fs-sm);
+    width: var(--fs-sm);
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
 }
 
 .dot1 {
-    height: 1.2vw;
-    width: 1.2vw;
+    height: var(--fs-sm);
+    width: var(--fs-sm);
     background-color: #818990;
     border-radius: 50%;
     display: inline-block;
