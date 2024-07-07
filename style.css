@@ -32,7 +32,7 @@ hr {
 }
 
 h1 {
-    font-size: var(--fs-md);
+    font-size: var(--fs-lg);
     font-family: Kufam;
     text-transform: uppercase;
     padding-bottom: 2vw;
@@ -41,7 +41,7 @@ h1 {
 h2 {
     text-transform: uppercase;
     font-family: Kufam;
-    font-size: var(--fs-base);
+    font-size: var(--fs-md);
     font-weight: 600;
     margin: 8px 0px 0px 0px;
 }
@@ -101,14 +101,14 @@ header nav ul {
 }
 
 .home-link {
-    font-size: var(--fs-base);
+    font-size: var(--fs-md);
     font-family: Kufam;
     font-weight: 600;
 }
 
 .h-f-link {
     font-weight: 500;
-    font-size: var(--fs-sm);
+    font-size: var(--fs-base);
 }
 
 header nav ul li:hover, footer nav ul li :hover{
@@ -194,7 +194,6 @@ footer {
 .card-storia p {
     color: #2E4559;
     font-family: Kufam;
-    font-size: var(--fs-sm);
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -209,16 +208,16 @@ footer {
 }
 
 .dot0 {
-    height: var(--fs-sm);
-    width: var(--fs-sm);
+    height: var(--fs-base);
+    width: var(--fs-base);
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
 }
 
 .dot1 {
-    height: var(--fs-sm);
-    width: var(--fs-sm);
+    height: var(--fs-base);
+    width: var(--fs-base);
     background-color: #818990;
     border-radius: 50%;
     display: inline-block;
