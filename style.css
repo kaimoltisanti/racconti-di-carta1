@@ -80,7 +80,8 @@ p {
 
 /* {{ Header and Footer }} */
 
-header, footer {
+header,
+footer {
     text-transform: uppercase;
     max-width: 1100px;
     padding: 1rem 4vw;
@@ -135,8 +136,19 @@ footer {
     text-align: center;
 }
 
+.display{
+    display: none;
+}
 
 /* {{ End Header and Footer}} */
+
+.modelli-top {
+    max-height: 1100px;
+}
+
+.modelli-top div {
+    object-fit: cover;
+}
 
 .top_bg {
     display: grid;
@@ -158,6 +170,17 @@ footer {
     text-transform:none;
     }
 
+.modelli-top {
+    min-height: 30vw;
+    background-image: url(img/tsuru.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-m {
+    background: rgba(241, 241, 241, 0.80);
+}
+
 .image {
     width: 100%;
     height: 100%;
@@ -177,13 +200,36 @@ footer {
     background-repeat: repeat;
 }
 
-.container-wave {
+.tutorial-img {
+    margin: auto;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 2vw;
+}
+
+.tutorial-img img {
+    background-color: #fff;
+    border-radius: 10px;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+}
+
+.container-tutorial {
+    display: flex;
+    justify-content: space-between;
     margin: auto;
     max-width: 1100px;
     padding: 6vw 4vw;
 }
 
-.info-wave {
+.wave__container {
+    margin: auto;
+    max-width: 1100px;
+    padding: 6vw 4vw;
+}
+
+.wave__container__top {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 1vw;
@@ -191,36 +237,15 @@ footer {
 
 } 
 
-.card-wave {
+.wave__container__card {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2vw 2vw;
+    padding-bottom: 6vw;
     
 }
 
-.card-expandend {
-    max-width: 1110px;
-    margin: auto;
-    background-color: #D9D9D9;
-    margin-bottom: 2vw;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 1vw;
-    padding: 6vw;
-}
-
-.card-expandend p {
-    line-height: 1.3;
-    margin-bottom: 1rem;
-}
-
-.card-expandend img {
-    mix-blend-mode: multiply;
-    max-width:fit-content;
-}
-
-.card-wave p {
+.wave__container__card p {
     color: #2E4559;
     font-family: Kufam;
     font-style: normal;
@@ -234,17 +259,41 @@ footer {
     align-items: center;
     text-align: center;
     padding: 1vw 4vw;
-    min-height: 8vw;
+    min-height: 5em;
+}
+
+.wave__container__card--expanded {
+    max-width: 1110px;
+    margin: auto;
+    background-color: #D9D9D9;
+    margin-bottom: 2vw;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2vw;
+    padding: 2vw;
+}
+
+.wave__container__card--expanded p {
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.wave__container__card--expanded img {
+    mix-blend-mode: multiply;
+    max-width:fit-content;
 }
 
 
 
-.info-wave a :hover, .card-expandend a :hover, .card-wave a :hover, .modelli a :hover{
+
+
+.wave__container__top a :hover, .wave__container__card--expanded a :hover, .wave__container__card a :hover, .modelli a :hover{
     color: #4F6F8C;
     text-decoration: underline #2E4559;
 }
 
-.card-modelli :hover, .card-wave a :hover {
+.card-modelli :hover, .wave__container__card a :hover {
     border-radius: 10px;
     box-shadow: 0px 0px 8.2px 1px rgba(79, 111, 140, 0.50);
 }
@@ -265,7 +314,7 @@ footer {
 .dot1 {
     height: var(--fs-base);
     width: var(--fs-base);
-    background-color: #818990;
+    background-color: #2E4559;
     border-radius: 50%;
     display: inline-block;
 }
@@ -306,6 +355,17 @@ footer {
     aspect-ratio: 1/1;
 }
 
+.modelli-expanded {
+    max-width: 1100px;
+    margin: auto;
+    padding: 6vw 4vw;
+}
+
+.modelli-text {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
 @media (max-width: 600px) {
     header nav {
         display: inline;
@@ -332,8 +392,53 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .media-wave {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal:target {
+    display: block;
+}
+
+.modal-content {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.modal img {
+    object-fit: contain;
+    background-color: #fff;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 8px;
+}
+
+.close {
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.close:hover {
+    color: #ccc;
 }
