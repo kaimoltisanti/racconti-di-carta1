@@ -10,47 +10,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kufam:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <script src="../accordion.js" defer></script> <!-- Script con l'attributo defer -->
 
-    <script>
-        function show(id, obj_link){
-            //Prendo tutti gli elementi con classe display
-            var display = document.getElementsByClassName("display");
-            //Itero tutti gli elementi per assicurarmi che vengano nascosti
-            for(var i=0;i<display.length;i++){
-                display[i].style.display="none"; //Nascondo gli elementi
-            }
-            //Visualizzo l'elemento desiderato
-            document.getElementById(id).style.display="flex";
-
-            //Prendo tutti i link
-            var link = document.getElementsByClassName("link");
-            //Itero tutti gli elementi per assicurarmi che vengano visualizzati
-            for(var i=0;i<display.length;i++){
-                link[i].style.display=""; //Visualizzo gli elementi
-            }
-            //Nascondo il link corrente
-            obj_link.style.display="none";
-
-        }
-
-    </script>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html " class="home-link">racconti di carta</a>
+        <nav class="nav">
+            <a class="nav__link--home" href="index.html " >racconti di carta</a>
             <ul>
-                <li><a href="storia/storia.html" class="h-f-link">storia</a></li>
-                <li><a href="modelli/modelli.html" class="h-f-link">modelli</a></li>
-                <li><a href="origamisti/origamisti.html" class="h-f-link">origamisti</a></li>
+                <li class="nav__li"><a class="nav__link" href="storia/storia.html" >storia</a></li>
+                <li class="nav__li"><a class="nav__link" href="modelli/modelli.html">modelli</a></li>
+                <li class="nav__li"><a class="nav__link" href="origamisti/origamisti.html">origamisti</a></li>
             </ul>
         </nav>
     </header>
     <hr>
 
     <main>
-        <section class="top_bg">
-        <div class="top">
+        <section class="top">
+        <div class="top__content">
                 <p>
                 L'<b>origami</b> è  l'arte giapponese
                  di piegare la carta. 
@@ -61,7 +39,7 @@
                  che significa <b>carta</b>.
             </p>   
         </div>
-        <div class="image">
+        <div class="top__image">
             <img loading="lazy" src="img/kaeru_3_transparent-min.png" alt="">
         </div>
         </section>
@@ -69,20 +47,27 @@
 
         <section class="wave">
             <div class="wave__container">
-                <div class="wave__container__top">
+                <div class="wave__top">
                     <div><a href="storia/storia.html"><h1>storia</h1></a></div>
                     <div><p>La <b>storia</b> dell'origami è strettamente legata a quella della <b>carta</b> stessa. La storia della carta, a quanto si sa, è cominciata in Cina, ma è in Giappone che <b>l’origami</b> si è sviluppato e ed è divenuto parte integrante della società stessa.</p></div>
                 </div>
 
-                <div id="carta" class="display">
-                    <div class="wave__container__card--expanded">
-                        <div>
+                <div class="wave__accordion">
+                    <div class="wave__accordion__title">
+                        <h1>La carta</h1>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" viewBox="0 0 24 14" fill="none">
+                            <path d="M12.1092 13.8909C11.5796 13.8887 11.0725 13.6765 10.6992 13.3009L0.699176 3.30091C0.371523 2.91831 0.200311 2.42616 0.219753 1.92281C0.239196 1.41946 0.44786 0.941977 0.804049 0.585788C1.16024 0.229599 1.63772 0.0209339 2.14107 0.00149156C2.64442 -0.0179507 3.13657 0.153261 3.51918 0.480914L12.1092 9.06091L20.6992 0.480914C21.0818 0.153261 21.5739 -0.0179507 22.0773 0.00149156C22.5806 0.0209339 23.0581 0.229599 23.4143 0.585788C23.7705 0.941977 23.9792 1.41946 23.9986 1.92281C24.018 2.42616 23.8468 2.91831 23.5192 3.30091L13.5192 13.3009C13.1458 13.6765 12.6388 13.8887 12.1092 13.8909Z" fill="#2E4559"/>
+                        </svg>
+                    </div>
+                    <div class="wave__accordion__content">
+                        <div class="maria">
                             <h1>La carta</h1>
                             <figure>
-                                <img loading="lazy" src="img/storia_1_cailun.jpg.jpg" alt="">
-                                <figcaption>L'eunuco Cai Lun <em>蔡倫</em></figcaption>
-                            </figure>    
+                            <img loading="lazy" src="img/storia_1_cailun.jpg.jpg" alt="">
+                            <figcaption>L'eunuco Cai Lun <em>蔡倫</em></figcaption>
+                            </figure>
                         </div>
+                            
                         <div>
                             <p>La <strong>carta</strong>, secondo la tradizione, venne inventata in <strong>Cina</strong> agli inizi del II secolo d.C., sotto il regno dell&rsquo;imperatore <strong>Hedi</strong> <em>和帝</em> della dinastia degli Han Orientali.</p>
                             <p>Nel 105 d.C. l'eunuco <strong>Cai Lun</strong> <em>蔡倫</em> avrebbe presentato al sovrano il primo tipo di carta, prodotto probabilmente con fibre di canapa, vari tipi di corteccia, come quella del gelso, e altri materiali grezzi e di recupero.</p>
@@ -91,79 +76,118 @@
                             <p>Insieme alle onorificenze ricevute, per&ograve; a <strong>Cai Lun</strong> fu per&ograve; imposto il divieto assoluto di esportare fuori dalla Cina il segreto della fabbricazione della carta. Nel 610 d.C, tuttavia, la tecnica di produzione della carta giunse in <strong>Giappone</strong>, portata probabilmente da un monaco buddista che, per salvarsi la vita dopo essere stato catturato dai pirati giapponesi, rivel&ograve; il segreto.</p>
                         </div>
                     </div>
-                    
-                </div>    
-                <div id="origami" class="display">
-                    <div class="wave__container__card--expanded">
+                </div>
+
+                <div class="wave__accordion">
+                    <div class="wave__accordion__title">
+                        <h1>I significati sacri degli origami</h1>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" viewBox="0 0 24 14" fill="none">
+                            <path d="M12.1092 13.8909C11.5796 13.8887 11.0725 13.6765 10.6992 13.3009L0.699176 3.30091C0.371523 2.91831 0.200311 2.42616 0.219753 1.92281C0.239196 1.41946 0.44786 0.941977 0.804049 0.585788C1.16024 0.229599 1.63772 0.0209339 2.14107 0.00149156C2.64442 -0.0179507 3.13657 0.153261 3.51918 0.480914L12.1092 9.06091L20.6992 0.480914C21.0818 0.153261 21.5739 -0.0179507 22.0773 0.00149156C22.5806 0.0209339 23.0581 0.229599 23.4143 0.585788C23.7705 0.941977 23.9792 1.41946 23.9986 1.92281C24.018 2.42616 23.8468 2.91831 23.5192 3.30091L13.5192 13.3009C13.1458 13.6765 12.6388 13.8887 12.1092 13.8909Z" fill="#2E4559"/>
+                        </svg>
+                    </div>
+                    <div class="wave__accordion__content">
                         <div>
                             <h1>I significati sacri degli origami</h1>
-                            <figure>
-                                
-                            </figure>    
-                        </div>
-                        <div>
-                            <p>Complice la cultura <strong>giapponese </strong>ben presto la carta acquistò una grande importanza e delle valenze <strong>sacre</strong>.</p>
+                            <!-- <figure>
+                            <img loading="lazy" src="img/storia_1_cailun.jpg.jpg" alt="">
+                            <figcaption>L'eunuco Cai Lun <em>蔡倫</em></figcaption>
+                            </figure> -->
+                        </div>    
+                    <div>
+                        <p>Complice la cultura <strong>giapponese </strong>ben presto la carta acquistò una grande importanza e delle valenze <strong>sacre</strong>.</p>
                             <p>La parola <strong>origami </strong><i>折り紙</i> evoca significati che sono ricollegabili all'ambito religioso. Essa è composta da due termini: <strong>ori</strong> <i>折</i>, che significa "piegare", e <strong>kami </strong><i>紙</i>, che significa "carta", da cui il significato di "carta piegata" o di piegare la carta".</p>
                             <p>Per le regole della fonetica giapponese, il suono della consonante "k" si muta in "g" e la pronuncia che ne risulta è dunque origami. Ma kami è anche qualcosa di superiore, qualcosa che "sta sopra", che galleggia, che sta in alto. La parola che allude alle divinità <i>神</i>, coloro che per definizione "stanno in alto", si pronuncia nello stesso modo, kami appunto. E per fabbricare la carta si usavano, e si usano tuttora, varie fibre vegetali ridotte in pasta finissima, miste a cotone e ad altre fibre che, macerate in acqua, tendono naturalmente a galleggiare; da qui, forse, l'idea che la carta sia un <strong>mezzo</strong> per consentire agli uomini di entrare in contatto con le divinità stesse.</p>
                             <p>La fabbricazione della carta, un processo di continua trasformazione, è un concetto radicato nella cultura orientale. Si prelevano le piante di riso, si trasformano in pasta finissima e "rinascono" come carta. Questo ha reso naturale il suo uso in ambito religioso, come le strisce di <i>gohei </i>che uniscono idealmente gli uomini alle divinità e delimitano lo <strong>spazio sacro dei templi</strong>. Queste strisce erano il premio per i lottatori di sumo. In seguito, i fabbricanti di spade per samurai le usavano per consacrare lo spazio di lavoro. In Giappone, i monaci erano i principali produttori di carta, in quanto principali utilizzatori e per la necessità di manodopera specializzata. La carta non veniva usata per creare "modelli" come oggi, ma <strong>figure astratte</strong> con significato simbolico e rituale, secondo regole formali note a pochi specialisti. Questa pratica è durata almeno 150 anni.</p>
-                        </div>
                     </div>
-                </div>    
-                <div id="heian" class="display">
-                    <div class="wave__container__card--expanded">
+                    </div>
+                </div>
+
+                <div class="wave__accordion">
+                    <div class="wave__accordion__title">
+                        <h1>Il periodo Heian</h1>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" viewBox="0 0 24 14" fill="none">
+                            <path d="M12.1092 13.8909C11.5796 13.8887 11.0725 13.6765 10.6992 13.3009L0.699176 3.30091C0.371523 2.91831 0.200311 2.42616 0.219753 1.92281C0.239196 1.41946 0.44786 0.941977 0.804049 0.585788C1.16024 0.229599 1.63772 0.0209339 2.14107 0.00149156C2.64442 -0.0179507 3.13657 0.153261 3.51918 0.480914L12.1092 9.06091L20.6992 0.480914C21.0818 0.153261 21.5739 -0.0179507 22.0773 0.00149156C22.5806 0.0209339 23.0581 0.229599 23.4143 0.585788C23.7705 0.941977 23.9792 1.41946 23.9986 1.92281C24.018 2.42616 23.8468 2.91831 23.5192 3.30091L13.5192 13.3009C13.1458 13.6765 12.6388 13.8887 12.1092 13.8909Z" fill="#2E4559"/>
+                        </svg>
+                    </div>
+                    <div class="wave__accordion__content">
                         <div>
                             <h1>Il periodo Heian</h1>
-                            <figure>
-                                
-                            </figure>    
-                        </div>
-                        <div>
-                            <p>Nel periodo <strong>Heian </strong>(794-1185), l'origami passò gradualmente dall'uso religioso a quello profano. Non solo i monaci, ma anche i <strong>nobili </strong>
-                                piegavano la carta, materiale che rimaneva costoso e raro. Si svilupparono modelli più figurativi, come <strong>animali </strong>e <strong>fiori</strong>, incluso il 
-                                famoso <a href="modelli/gru.html"><strong><u>tsuru</u></strong></a> <i>鶴 </i>(gru). </p> 
-                                <p>Un uso comune era coprire le bottiglie di sake con un foglio di carta pieghettato nelle cerimonie religiose. Allo stesso periodo risalgono 
-                                le <a href="modelli/farfalle.html"><strong><u>farfalle maschio</u></strong></a> <i>雄蝶</i> (ocho) e <a href="modelli/farfalle.html"><strong><u>femmina</u></strong></a> <i>雌蝶</i> (mecho) applicate al collo delle 
-                                bottiglie di sake nelle nozze shintoiste, pratica ancora oggi diffusa.</p>
-                        </div>
+                            <!-- <figure>
+                            <img loading="lazy" src="img/storia_1_cailun.jpg.jpg" alt="">
+                            <figcaption>L'eunuco Cai Lun <em>蔡倫</em></figcaption>
+                            </figure> -->
+                        </div>    
+                    <div>
+                        <p>Nel periodo <strong>Heian </strong>(794-1185), l'origami passò gradualmente dall'uso religioso a quello profano. Non solo i monaci, ma anche i <strong>nobili </strong>
+                            piegavano la carta, materiale che rimaneva costoso e raro. Si svilupparono modelli più figurativi, come <strong>animali </strong>e <strong>fiori</strong>, incluso il 
+                            famoso <a href="modelli/gru.html"><strong><u>tsuru</u></strong></a> <i>鶴 </i>(gru). </p> 
+                            <p>Un uso comune era coprire le bottiglie di sake con un foglio di carta pieghettato nelle cerimonie religiose. Allo stesso periodo risalgono 
+                            le <a href="modelli/farfalle.html"><strong><u>farfalle maschio</u></strong></a> <i>雄蝶</i> (ocho) e <a href="modelli/farfalle.html"><strong><u>femmina</u></strong></a> <i>雌蝶</i> (mecho) applicate al collo delle 
+                            bottiglie di sake nelle nozze shintoiste, pratica ancora oggi diffusa.</p>
                     </div>
-                </div>    
-                <div id="muromachi" class="display">
-                    <div class="wave__container__card--expanded">
+                    </div>
+                </div>
+
+                <div class="wave__accordion">
+                    <div class="wave__accordion__title">
+                        <h1>Il periodo Muromachi o Ashikaga</h1>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" viewBox="0 0 24 14" fill="none">
+                            <path d="M12.1092 13.8909C11.5796 13.8887 11.0725 13.6765 10.6992 13.3009L0.699176 3.30091C0.371523 2.91831 0.200311 2.42616 0.219753 1.92281C0.239196 1.41946 0.44786 0.941977 0.804049 0.585788C1.16024 0.229599 1.63772 0.0209339 2.14107 0.00149156C2.64442 -0.0179507 3.13657 0.153261 3.51918 0.480914L12.1092 9.06091L20.6992 0.480914C21.0818 0.153261 21.5739 -0.0179507 22.0773 0.00149156C22.5806 0.0209339 23.0581 0.229599 23.4143 0.585788C23.7705 0.941977 23.9792 1.41946 23.9986 1.92281C24.018 2.42616 23.8468 2.91831 23.5192 3.30091L13.5192 13.3009C13.1458 13.6765 12.6388 13.8887 12.1092 13.8909Z" fill="#2E4559"/>
+                        </svg>
+                    </div>
+                    <div class="wave__accordion__content">
                         <div>
                             <h1>Il periodo Muromachi o Ashikaga</h1>
-                            <figure>
-                                
-                            </figure>    
-                        </div>
+                            <!-- <figure>
+                            <img loading="lazy" src="img/storia_1_cailun.jpg.jpg" alt="">
+                            <figcaption>L'eunuco Cai Lun <em>蔡倫</em></figcaption>
+                            </figure> -->
+                        </div>    
                         <div>
                             <p>Il periodo Kamakura (1185-1333) seguì il periodo Heian, seguito dal periodo <strong>Muromachi </strong>o <strong>Ashikaga </strong>(1333-1573), caratterizzato dall'ascesa dei <strong>samurai </strong>e dal declino dell'aristocrazia civile. Durante questo tempo, si svilupparono nuove scuole buddiste, come quella <strong>zen</strong>, che esalta l'autodisciplina, la meditazione e il contatto con la natura. L'origami si diffuse tra tutti i ceti sociali.</p>
                             <p>In questo periodo naque il <a href="modelli/noshi.html"><strong><u>noshi</u></strong></a> <i>熨斗</i>, una decorazione di carta usata per accompagnare un regalo come simbolo di buon auspicio. L'arte dell'origami divenne un requisito fondamentale per le famiglie di <strong>alto rango</strong>, e si sviluppò l'uso di piegare lettere in forme come farfalle, gru, fiori o forme astratte. </p>
                             <p>La pratica si diffuse anche tra le classi popolari, con la creazione di <strong>custodie</strong> per piccoli oggetti; o la relizzazione in carta della sfera di erbe <i>kusudama</i>, ritenuta un protettore dagli spiriti maligni. Durante questo periodo, il Paese raggiunse un grande sviluppo economico, portando a un relativo benessere e tranquillità sociale.</p>
                         </div>
                     </div>
-                </div>    
-                <div id="edo" class="display">
-                    <div class="wave__container__card--expanded">
+                </div>
+
+                <div class="wave__accordion">
+                    <div class="wave__accordion__title">
+                        <h1>Il periodo Edo o Tokugawa</h1>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" viewBox="0 0 24 14" fill="none">
+                            <path d="M12.1092 13.8909C11.5796 13.8887 11.0725 13.6765 10.6992 13.3009L0.699176 3.30091C0.371523 2.91831 0.200311 2.42616 0.219753 1.92281C0.239196 1.41946 0.44786 0.941977 0.804049 0.585788C1.16024 0.229599 1.63772 0.0209339 2.14107 0.00149156C2.64442 -0.0179507 3.13657 0.153261 3.51918 0.480914L12.1092 9.06091L20.6992 0.480914C21.0818 0.153261 21.5739 -0.0179507 22.0773 0.00149156C22.5806 0.0209339 23.0581 0.229599 23.4143 0.585788C23.7705 0.941977 23.9792 1.41946 23.9986 1.92281C24.018 2.42616 23.8468 2.91831 23.5192 3.30091L13.5192 13.3009C13.1458 13.6765 12.6388 13.8887 12.1092 13.8909Z" fill="#2E4559"/>
+                        </svg>
+                    </div>
+                    <div class="wave__accordion__content">
                         <div>
                             <h1>Il periodo Edo o Tokugawa</h1>
-                            <figure>
-                                
-                            </figure>    
-                        </div>
-                        <div>
-                            <p>Durante il periodo <strong>Edo </strong>o <strong>Tokugawa </strong>(1603-1868) in Giappone, l'origami si diffuse grazie alla <strong>stampa</strong>. Tra i testi antichi che riportano modelli di origami ci sono il <i>Chushingura Orikata</i> e lo <i>Hiden Senbazuru Orikata</i>, noto per i "segreti per piegare le mille gru".&nbsp;</p>
-                            <p>Altri modelli tradizionali si trovano nel <i>Kayaragusa</i>, una raccolta di <strong>modelli cerimoniali</strong>. Questa raccolta è preziosa in quanto documenta i modelli tradizionali già conosciuti a quel tempo.</p>
-                        </div>
+                            <!-- <figure>
+                            <img loading="lazy" src="img/storia_1_cailun.jpg.jpg" alt="">
+                            <figcaption>L'eunuco Cai Lun <em>蔡倫</em></figcaption>
+                            </figure> -->
+                        </div>    
+                    <div>
+                        <p>Durante il periodo <strong>Edo </strong>o <strong>Tokugawa </strong>(1603-1868) in Giappone, l'origami si diffuse grazie alla <strong>stampa</strong>. Tra i testi antichi che riportano modelli di origami ci sono il <i>Chushingura Orikata</i> e lo <i>Hiden Senbazuru Orikata</i>, noto per i "segreti per piegare le mille gru".&nbsp;</p>
+                        <p>Altri modelli tradizionali si trovano nel <i>Kayaragusa</i>, una raccolta di <strong>modelli cerimoniali</strong>. Questa raccolta è preziosa in quanto documenta i modelli tradizionali già conosciuti a quel tempo.</p>
                     </div>
-                </div>    
-                <div id="fineedo" class="display">
-                    <div class="wave__container__card--expanded">
+                    </div>
+                </div>
+
+                <div class="wave__accordion">
+                    <div class="wave__accordion__title">
+                        <h1>Fine del periodo Edo</h1>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" viewBox="0 0 24 14" fill="none">
+                            <path d="M12.1092 13.8909C11.5796 13.8887 11.0725 13.6765 10.6992 13.3009L0.699176 3.30091C0.371523 2.91831 0.200311 2.42616 0.219753 1.92281C0.239196 1.41946 0.44786 0.941977 0.804049 0.585788C1.16024 0.229599 1.63772 0.0209339 2.14107 0.00149156C2.64442 -0.0179507 3.13657 0.153261 3.51918 0.480914L12.1092 9.06091L20.6992 0.480914C21.0818 0.153261 21.5739 -0.0179507 22.0773 0.00149156C22.5806 0.0209339 23.0581 0.229599 23.4143 0.585788C23.7705 0.941977 23.9792 1.41946 23.9986 1.92281C24.018 2.42616 23.8468 2.91831 23.5192 3.30091L13.5192 13.3009C13.1458 13.6765 12.6388 13.8887 12.1092 13.8909Z" fill="#2E4559"/>
+                        </svg>
+                    </div>
+                    <div class="wave__accordion__content">
                         <div>
                             <h1>Fine del periodo Edo</h1>
-                            <figure>
-                                
-                            </figure>    
-                        </div>
+                            <!-- <figure>
+                            <img loading="lazy" src="img/storia_1_cailun.jpg.jpg" alt="">
+                            <figcaption>L'eunuco Cai Lun <em>蔡倫</em></figcaption>
+                            </figure> -->
+                        </div>    
                         <div>
                             <p>Durante la fine del periodo <strong>Edo</strong>, il Giappone iniziò ad assimilare la cultura <strong>occidentale</strong>. Fino a quel momento, pochi giapponesi avevano avuto l'opportunità di viaggiare all'estero e pochi stranieri erano entrati in Giappone. In questo periodo, l'origami divenne noto all'estero grazie a <strong>tour organizzati</strong>.&nbsp;</p>
                             <p>All'inizio, in Europa, gli origamisti erano considerati maghi perché nessuno aveva mai visto simili opere d'arte. <strong><u>Friedrich Fröbel</u></strong>, a metà del XIX secolo, riconobbe il potenziale <strong>educativo </strong>dell'origami per sviluppare la creatività e insegnare geometria.&nbsp;</p>
@@ -171,58 +195,50 @@
                             <p>Oggi l'origami trova applicazioni nella <strong>vita quotidiana</strong>, inclusi gli <strong>airbag </strong>delle auto, la lente del telescopio Hubble, e i moderni stent usati in chirurgia vascolare. È anche utile nel recupero e cura di disturbi psicologici. <strong><u>Robert J. Lang</u></strong> della N.A.S.A. ha formalizzato la teoria dell'origami, che oggi è oggetto di studi matematici.</p>
                         </div>
                     </div>
-                </div>    
-            
-                <div class="wave__container__card">
-                <a class="link" onclick="show('carta', this)"><p>la carta</p></a>
-                <a class="link" onclick="show('origami', this)"><p>i significati sacri degli origami</p></a>
-                <a class="link" onclick="show('heian', this)"><p>Il periodo Heian</p></a>
-                <a class="link" onclick="show('muromachi', this)"><p>Il periodo Muromachi o Ashikaga</p></a>
-                <a class="link" onclick="show('edo', this)"><p>Il periodo Edo o Tokugawa</p></a>
-                <a class="link" onclick="show('fineedo', this)"><p>Fine del periodo Edo</p></a>
-             
+                </div>
+            </div>
         </section>
         
         
         <section class="modelli"> 
-            <a href="modelli/modelli.html"><h1>I nostri modelli</h1></a>
-            <div class="grid">
-                <div class="card-modelli">
+            <h1>I nostri modelli</h1>
+            <div class="modelli-grid">
+                <div class="modelli-grid__card">
                     <img loading="lazy" src="img/tsuru-min.png" alt="Tsuru">
                     <div>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot0"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--light"></span>
                         <h2>Gru</h2>
                         <h3>Tsuru 鶴</h3>
                     </div>
                     <a href="modelli/gru.html" class='card-link'></a>
                 </div>
 
-                <div class="card-modelli">
+                <div class="modelli-grid__card">
                     <img loading="lazy" src="img/koi-min.jpeg" alt="" srcset="">  
                     <div>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
                         <h2>carpa</h2>
                         <h3>koi 鯉</h3>
                     </div>
                     <a href="modelli/carpa.html" class='card-link'></a>
                 </div>
 
-                <div class="card-modelli">
+                <div class="modelli-grid__card">
                     <img loading="lazy" src="img/ocho_mecho-min.jpg" alt="" srcset="">
                     <div>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot0"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--light"></span>
                         <h2>farfalle</h2>
                         <h3>Ocho 雄蝶</h3>
                         <h3>mecho 雌蝶</h3> 
@@ -230,127 +246,127 @@
                     <a href="modelli/farfalle.html" class='card-link'></a>
                 </div>
 
-                <div class="card-modelli">
+                <div class="modelli-grid__card">
                     <img loading="lazy" src="img/kaeru-min.jpeg" alt="" srcset="">  
                     <div>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot0"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--light"></span>
                         <h2>raganella</h2>
                         <h3>kaeru 蛙</h3> 
                     </div>
                     <a href="modelli/rana.html" class='card-link'></a>
                 </div>
 
-                <div class="card-modelli">
+                <div class="modelli-grid__card">
                     <img loading="lazy" src="img/noshi-min.jpeg" alt="" srcset="">
                    
                     <div>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
                         <h2>noshi</h2>
                         <h3>noshi 熨斗</h3>  
                     </div>
                     <a href="modelli/noshi.html" class='card-link'></a>
                 </div>
 
-                <div class="card-modelli">
+                <div class="modelli-grid__card">
                     <img loading="lazy" src="img/bicchiere-min.jpg" alt="" srcset="">
                     <div>
-                        <span class="dot1"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
                         <h2>bicchiere</h2>
                         <h3>盃</h3>
                     </div>
                     <a href="modelli/bicchiere.html" class='card-link'></a>
                 </div>
 
-                <div class="card-modelli">
+                <div class="modelli-grid__card">
                     <img loading="lazy" src="img/busta-min.jpg" alt="" srcset="">
                     <div>
-                        <span class="dot1"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
                         <h2>la busta</h2>
                         <h3>封筒</h3>
                     </div>
                     <a href="modelli/busta.html" class='card-link'></a>
                 </div>
 
-                <div class="card-modelli">
+                <div class="modelli-grid__card">
                     <img loading="lazy" src="img/kabuto-min.jpg" alt="" srcset="">
                     <div>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
                         <h2>il kabuto</h2>
                         <h3>kabuto 兜</h3>
                     </div>
                     <a href="modelli/kabuto.html" class='card-link'></a>
                 </div>
 
-                <div class="card-modelli">
+                <div class="modelli-grid__card">
                     <img loading="lazy" src="img/kimono-min.jpg" alt="" srcset="">
                     <div>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
                         <h2>kimono</h2>
                         <h3>kimono 着物</h3>
                     </div>
                     <a href="modelli/kimono.html" class='card-link'></a>
                 </div>
 
-                <div class="card-modelli">
+                <div class="modelli-grid__card">
                     <img loading="lazy" src="img/sumo-min.jpg" alt="" srcset=""> 
                     <div>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
-                        <span class="dot0"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
+                        <span class="dot dot--light"></span>
                         <h2>il lottatore di sumo</h2>
                         <h3>力士</h3>
                     </div>
                     <a href="modelli/sumo.html" class='card-link'></a>
                 </div>
 
-                <div class="card-modelli">
+                <div class="modelli-grid__card">
                     <img loading="lazy" src="img/tartaruga-min.jpg" alt="" srcset="">
                     <div>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot0"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--light"></span>
                         <h2>Il tato a guscio di tartaruga</h2>
                         <h3>亀の甲羅</h3>
                     </div>
                     <a href="modelli/tartaruga.html" class='card-link'></a>
                 </div>
 
-                <div class="card-modelli">
+                <div class="modelli-grid__card">
                     <img loading="lazy" src="img/busta_ottagonale-min.jpg" alt="" srcset="">
                     <div>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot1"></span>
-                        <span class="dot0"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--dark"></span>
+                        <span class="dot dot--light"></span>
                         <h2>La busta ottagonale</h2>
                         <h3>八角形物入れ</h3>
                     </div>
@@ -359,12 +375,12 @@
             </div>
         </section>
     </main>
-<hr>
+    <hr>
     <footer>
-        <nav>
-            <a href="index.html " class="home-link">racconti di carta</a>
+        <nav class="nav">
+            <a class="nav__link--home" href="index.html " >racconti di carta</a>
             <ul>
-                <li><a href="chi_siamo/chi_siamo.html" class="h-f-link">chi siamo</a></li>
+                <li class="nav__li"><a class="nav__link" href="chi_siamo/chi_siamo.html" >chi siamo</a></li>
             </ul>
         </nav>
     </footer>
