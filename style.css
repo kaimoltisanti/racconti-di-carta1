@@ -527,10 +527,16 @@ svg {
 
     .simboli__grid__item--mobile {
         display: grid;
+        justify-items: center;
         padding: 1vw;
         border-radius: 0.5vw;
         background-color: #fbfbfb;
-    }    
+    }
+    
+    .simboli__grid__item--mobile img {
+        max-width: 60%;
+    }
+    
 
 }
   
