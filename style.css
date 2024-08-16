@@ -1,4 +1,7 @@
 /* {{ Start General }} */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
 
 html {
     font-size: 10px;
