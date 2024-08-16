@@ -499,6 +499,10 @@ svg {
     gap: 0.5rem;
 }
 
+.simboli__grid__item--mobile {
+    display: none;
+}
+
 .snaps-inline {
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: 2vw;
@@ -508,10 +512,35 @@ svg {
   .snaps-inline > * {
     scroll-snap-align: start;
   }
+
+
+@media (max-width: 600px) {
+
+    .simboli__grid h1 {
+        padding: 4vw;
+        text-align: center;
+    }
+
+    .simboli__grid__group {
+        display: none;
+    }
+
+    .simboli__grid__item--mobile {
+        display: grid;
+        padding: 1vw;
+        border-radius: 0.5vw;
+        background-color: #fbfbfb;
+    }    
+
+}
+  
+
+
   
 /* Modelli End */
 
 @media (max-width: 600px) {
+
     header nav {
         display: inline;
     }
@@ -563,6 +592,8 @@ svg {
     .modal-content {
         width: 100%;
     }
+
+
 
 }
 
