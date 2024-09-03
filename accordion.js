@@ -1,8 +1,10 @@
 const accordions = document.querySelectorAll(".wave__accordion");
 
 accordions.forEach((accordion) => {
-    accordion.addEventListener("click", () => {
-        console.log("Accordion clicked!"); // Aggiungi questo per il debug
+    const title = accordion.querySelector('.wave__accordion__title');
+    
+    // Aggiungi l'evento di click solo sul titolo dell'accordion
+    title.addEventListener("click", () => {
         accordion.classList.toggle("active");
     });
 });
