@@ -376,6 +376,7 @@ header nav ul {
 .wave__accordion__title {
     display: flex;
     justify-content: space-between;
+    gap: 2vw;
     align-items: center;
     padding-right: 1vw;
     padding-left: 2vw;
@@ -403,6 +404,7 @@ header nav ul {
     padding-top: 2vw;
     max-height: fit-content;
     animation: fade 1s ease-in-out;
+    cursor: default;
 }
 
 .wave__accordion.active .wave__accordion__title h1 {
@@ -492,13 +494,16 @@ svg {
 
 .wave__table >* {
     display: flex;
-    align-items: center;
     text-align: center;
     text-transform: uppercase;
     background-color: #d9d9d9;
     border-radius: var(--border-radius);
     padding: 2vw 1vw ;
     margin: 0;
+}
+
+.wave__table a {
+    margin: auto;
 }
 
 .wave__table--highlighted {
@@ -583,7 +588,8 @@ svg {
     
 }
 
-.modelli-grid{
+.modelli-grid,
+.modelli-grid--small {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2vw;
@@ -603,14 +609,25 @@ svg {
     width: 100%;
 }
 
-.modelli-grid div div{
+.modelli-grid div div,
+.modelli-grid--small div div {
     padding: 1vw;
 }
 
-.modelli-grid img {
+.modelli-grid img,
+.modelli-grid--small img {
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     object-fit: cover;
     aspect-ratio: 1/1;
+}
+
+.modelli-grid--small{
+    grid-template-columns: 1fr 1fr;
+}
+
+.modelli-grid--small img {
+    object-position: bottom;
+    aspect-ratio: 2/1;
 }
 
 .modelli-exp {
@@ -757,6 +774,10 @@ svg {
         grid-template-columns: 1fr 1fr;
     }
 
+    .modelli-grid--small img {
+        aspect-ratio: 1/1;
+    }
+
     .modelli-exp {
         display: block;
     }
@@ -872,7 +893,7 @@ svg {
 }
 
 .simboli-mod h1 {
-    padding: 0;
+    padding: 60px 0 0 0;
 }
 
 .simboli-mod h1 {
