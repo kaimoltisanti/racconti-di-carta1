@@ -893,14 +893,12 @@ svg {
 }
 
 .simboli-mod h1 {
+    color: #f1f1f1;
     padding: 60px 0 0 0;
 }
 
-.simboli-mod h1 {
-    color: #f1f1f1;
-}
-
 .simboli-mod__grid h1 {
+    padding: 0;
     color: var(--dark-blue);
 }
 
