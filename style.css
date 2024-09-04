@@ -328,6 +328,10 @@ header nav ul {
     padding-bottom: 3vw;
 }
 
+.wave__top h3 {
+    text-align: center;
+}
+
 .wave img {
     border-radius: var(--border-radius);
 }
