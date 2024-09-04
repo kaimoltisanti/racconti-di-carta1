@@ -29,25 +29,17 @@ h1, h2, h3, h4, h5, h6, ul, li, p, a, figure {
 }
 
 figure {
-    max-width: 70%;
-    display: table;
-    padding: 5px;
     font-size: 1rem;
 }
 
 figcaption {
     text-align: center;
     margin: auto;
-    display: table-caption;
-    caption-side: bottom;
-    padding: 0 5px 5px;
 }
 
 figure img {
-   border-radius: var(--border-radius); 
    margin: auto;
-   display: block;
-   max-width: 100%;
+   min-width: 100%;
 }
 
 a {
@@ -236,7 +228,7 @@ header nav ul {
     color: var(--light-blue);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     header nav {
         display: inline;
     }
@@ -303,7 +295,7 @@ header nav ul {
     background: rgba(241, 241, 241, 0.80);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .top__image img {
         min-width: 180%; 
     }
@@ -340,19 +332,20 @@ header nav ul {
     border-radius: var(--border-radius);
 }
 
+.wave__accordion .wave-full-img {
+    max-width: 80%;
+}
+
 .wave-mobile-img {
     display: none;
     flex-direction: column;
     margin: auto;
     max-width: 50%;
-}
-
-.wave-mobile-img img {
-    min-width: 100%;
+    padding: 4vw 0;
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .wave__top {
         grid-template-columns: 1fr;
     }
@@ -371,7 +364,7 @@ header nav ul {
 .wave__accordion {
     background-color: #d9d9d9;
     border-radius: var(--border-radius);
-    padding: 1vw;
+    padding: 2vw;
     align-content: center;
     cursor: pointer;
 }
@@ -434,7 +427,7 @@ svg {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .wave__accordion.active .wave__accordion__content {
         display: inline;
     }
@@ -535,23 +528,19 @@ svg {
     mix-blend-mode: multiply;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .wave__table {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .wave-table--expanded-content {
+        grid-template-columns: 1fr;
     }
 }
 
 /* Fine wave origamisti */
 
 /* wave hover styling */
-
-/* .wave__top a :hover,  
-.wave__container a :hover,
-.wave__table p :hover {
-    color: var(--light-blue);
-    text-decoration: underline var(--dark-blue);
-} */
-
 
 .wave__top a :hover,  
 .wave__container a :hover,
@@ -723,7 +712,7 @@ svg {
   scrollbar-width: none;  /* Firefox */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     .simboli__grid h1 {
         padding: 4vw;
@@ -752,7 +741,7 @@ svg {
 /* Simboli End */
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
  
 
@@ -766,12 +755,6 @@ svg {
 
     .modelli-exp {
         display: block;
-    }
-
-    .modelli-exp__text {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        gap: 4vw;
     }
 
     .top-modelli__background {
