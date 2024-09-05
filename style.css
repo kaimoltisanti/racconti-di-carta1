@@ -533,9 +533,6 @@ svg {
     filter: grayscale(100%);
 }
 
-.wave-table--expanded img {
-    mix-blend-mode: multiply;
-}
 
 @media (max-width: 700px) {
     .wave__table {
