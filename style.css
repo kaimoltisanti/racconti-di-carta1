@@ -563,14 +563,14 @@ svg {
     box-shadow: none;
 }
 
-.wave__accordion__content a {
-    text-decoration: underline solid 3px var(--link-hightlight);
+.wave__accordion__content a, .wave__top p a {
+    text-decoration: underline solid  var(--link-hightlight);
  }
  
- .wave__accordion__content a :hover {
+ .wave__accordion__content a, .wave__top p a:hover{
      color: #2E4559;
      background-color: var(--link-hightlight);
-     text-decoration: underline solid 3px var(--link-hightlight);
+     text-decoration: underline solid  var(--link-hightlight);
  }
 
 /* End Wave Section */
